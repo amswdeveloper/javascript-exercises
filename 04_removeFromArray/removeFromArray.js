@@ -1,20 +1,8 @@
-const removeFromArray = function(arr, ...element) {
-
-const newArray = [];
-
-for(let i = 0; i < arr.length; i++) {
-
-    if(element[i]){
-        continue;
-    } else {
-        newArray.push(arr[i]);
-    }
-}
-
-console.log(newArray);
-// return newArray;
-};
-removeFromArray([3, 4, 5, 6, 1, 8, 0], 3, 4, 5, 8);
+const removeFromArray = function(arr, ...elementsToRemove) {
+    // Use filter to create a new array without the specified elements
+    const resultArray = arr.filter(element => !elementsToRemove.includes(element));
+    return resultArray;
+  };
 
 // Do not edit below this line
 module.exports = removeFromArray;
